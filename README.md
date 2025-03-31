@@ -68,7 +68,10 @@ We also note that SCE framework requires preliminary data to construct optimal c
 
 ## Datasets used
 We provide access to datasets as follows:
-- [Synthetic Datasets](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155133928_link_cuhk_edu_hk/EqRyXvuRjURIltCtoVK1T7kBWvKXasvbhxOyg7qCFZwQgg?e=L751H5)
+- [Sharepoint Link](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155133928_link_cuhk_edu_hk/EqRyXvuRjURIltCtoVK1T7kBWvKXasvbhxOyg7qCFZwQgg?e=L751H5)
+- [SDXL generated animals with objects](https://huggingface.co/datasets/aziksh/animals_with_objects_sdxl)
+- [DALL-E 3 generated animals eating fruits](https://huggingface.co/datasets/aziksh/animals_with_fruits_dalle3)
+
 
 This `README.md` file provides a clear and concise guide for users to understand and run the demo script, including installation instructions, usage examples, and parameter explanations. Adjust the paths and filenames in the script to match your specific environment and dataset.
 
