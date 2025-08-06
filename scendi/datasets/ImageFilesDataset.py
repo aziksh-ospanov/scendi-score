@@ -28,6 +28,7 @@ class ImageFilesDataset(Dataset):
         self.files = []
 
         self.files_loaded = False  # For lazy loading of files
+        self.load_files()
 
     def load_files(self):
         for curr_path in Path(self.path).rglob(f"*.{self.extension}"):

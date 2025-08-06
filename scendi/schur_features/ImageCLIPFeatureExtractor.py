@@ -7,7 +7,7 @@
 import torch
 import torchvision.transforms as transforms
 import clip
-from SCE.schur_features.ImageFeatureExtractor import ImageFeatureExtractor
+from scendi.schur_features.ImageFeatureExtractor import ImageFeatureExtractor
 
 
 class ImageCLIPFeatureExtractor(ImageFeatureExtractor):

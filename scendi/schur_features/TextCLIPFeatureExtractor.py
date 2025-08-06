@@ -6,7 +6,7 @@ Created on Mon Apr 22 18:37:24 2024
 """
 
 import torch
-from SCE.schur_features.TextFeatureExtractor import TextFeatureExtractor
+from scendi.schur_features.TextFeatureExtractor import TextFeatureExtractor
 import clip
 
 
