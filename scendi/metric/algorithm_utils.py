@@ -52,8 +52,8 @@ def rff_schur_complement(x, y, args):
     n = x.shape[0]
     
     if args.kernel == 'gaussian':
-        x_cov, omegas, x_feature = cov_rff(x, args.rff_dim, args.sigma, args.batchsize, args.normalise)
-        y_cov, _, y_feature = cov_rff(y, args.rff_dim, args.sigma, args.batchsize, args.normalise, omegas)
+        x_cov, omegas, x_feature = cov_rff(x, args.rff_dim, args.sigma, args.batchsize)
+        y_cov, _, y_feature = cov_rff(y, args.rff_dim, args.sigma, args.batchsize, omegas)
         
         
         cov_yy = y_feature.T @ y_feature / n
@@ -100,7 +100,7 @@ def visualise_schur_image_modes_rff(image_test_feats, image_test_dataset, image_
 
     now_time = args.current_time
     
-    root_dir = os.path.join(args.path_save_visual, 'backbone_{}_norm_{}/{}_{}/'.format(args.backbone, args.normalise, args.visual_name, now_time))
+    root_dir = os.path.join(args.path_save_visual, 'backbone_{}_norm_{}/{}_{}/'.format(args.backbone, args.visual_name, now_time))
     os.makedirs(root_dir, exist_ok=True)
         
     transform = []
@@ -116,7 +116,7 @@ def visualise_schur_image_modes_rff(image_test_feats, image_test_dataset, image_
     
     now_time = args.current_time
     
-    root_dir = os.path.join(args.path_save_visual, 'backbone_{}_norm_{}/{}_{}/'.format(args.backbone, args.normalise, args.visual_name, now_time))
+    root_dir = os.path.join(args.path_save_visual, 'backbone_{}_norm_{}/{}_{}/'.format(args.backbone, args.visual_name, now_time))
 
     for i in range(args.num_visual_mode):
 
@@ -128,7 +128,7 @@ def visualise_schur_image_modes_rff(image_test_feats, image_test_dataset, image_
             s_value = -s_value
         topk_id = s_value.topk(args.num_img_per_mode)[1]
         
-        save_folder_name = os.path.join(args.path_save_visual, 'backbone_{}_norm_{}/{}_{}/'.format(args.backbone, args.normalise, args.visual_name, now_time), 'top{}'.format(i+1))
+        save_folder_name = os.path.join(args.path_save_visual, 'backbone_{}_norm_{}/{}_{}/'.format(args.backbone, args.visual_name, now_time), 'top{}'.format(i+1))
         os.makedirs(save_folder_name)
         os.makedirs(os.path.join(save_folder_name, '../ALL_SUMMARIES'), exist_ok=True)
         summary = []
@@ -152,7 +152,7 @@ def visualise_schur_image_modes_rff(image_test_feats, image_test_dataset, image_
             s_value = -s_value
         _, bottomk_id = torch.topk(-s_value, args.num_img_per_mode, largest=True)
 
-        save_folder_name = os.path.join(args.path_save_visual, 'backbone_{}_norm_{}/{}_{}/'.format(args.backbone, args.normalise, args.visual_name, now_time), 'bottom{}'.format(i+1))
+        save_folder_name = os.path.join(args.path_save_visual, 'backbone_{}_norm_{}/{}_{}/'.format(args.backbone, args.visual_name, now_time), 'bottom{}'.format(i+1))
         os.makedirs(save_folder_name)
         summary = []
 
@@ -165,7 +165,7 @@ def visualise_schur_image_modes_rff(image_test_feats, image_test_dataset, image_
         save_image(summary[:int(nrow**2)], os.path.join(save_folder_name, f'summary_bottom{i+1}.png'.format(j)), nrow=nrow)
         save_image(summary[:int(nrow**2)], os.path.join(save_folder_name, '../ALL_SUMMARIES', f'summary_bottom{i+1}.png'.format(j)), nrow=nrow)
 
-def cov_rff2(x, feature_dim, std, batchsize=16, presign_omeaga=None, normalise = True):
+def cov_rff2(x, feature_dim, std, batchsize=16, presign_omeaga=None):
     assert len(x.shape) == 2 # [B, dim]
 
     x_dim = x.shape[-1]
@@ -196,7 +196,7 @@ def cov_rff2(x, feature_dim, std, batchsize=16, presign_omeaga=None, normalise =
 
     return cov, batched_rff.squeeze()
 
-def cov_rff(x, feature_dim, std, batchsize=16, normalise=True, presign_omegas = None):
+def cov_rff(x, feature_dim, std, batchsize=16, presign_omegas = None):
     assert len(x.shape) == 2 # [B, dim]
 
     x = x.to('cuda' if torch.cuda.is_available() else 'cpu')
@@ -207,7 +207,7 @@ def cov_rff(x, feature_dim, std, batchsize=16, normalise=True, presign_omegas = 
     else:
         omegas = presign_omegas
 
-    x_cov, x_feature = cov_rff2(x, feature_dim, std, batchsize=batchsize, presign_omeaga=omegas, normalise=normalise)
+    x_cov, x_feature = cov_rff2(x, feature_dim, std, batchsize=batchsize, presign_omeaga=omegas)
 
     return x_cov, omegas, x_feature # [2 * feature_dim, 2 * feature_dim], [D, feature_dim], [B, 2 * feature_dim]
     

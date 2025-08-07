@@ -41,13 +41,12 @@ def get_logger(filepath='./logs/novelty.log'):
     return logger
 
 class ScendiEvaluator():
-    def __init__(self, logger_path : str, sigma : float, result_name: str, num_samples: int = 5000, batchsize: int = 128, rff_dim: int = 0, normalise: bool = False, save_visuals_path: str = 'visuals'):
+    def __init__(self, logger_path : str, sigma : float, result_name: str, num_samples: int = 5000, batchsize: int = 128, rff_dim: int = 0, save_visuals_path: str = 'visuals'):
         self.logger_path = logger_path
         self.sigma = sigma
         self.num_samples = num_samples
         self.batchsize = batchsize
         self.rff_dim = rff_dim
-        self.normalise = normalise
         self.save_visuals_path = save_visuals_path
 
         self.current_time = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
@@ -104,7 +103,6 @@ class ScendiEvaluator():
                          num_visual_mode=5,
                          num_img_per_mode=50,
                          resize_img_to=224,
-                         normalise = self.normalise,
                          kernel='gaussian',
                          device = 'cuda:0'
         )
@@ -154,7 +152,6 @@ class ScendiEvaluator():
                          num_visual_mode=5,
                          num_img_per_mode=50,
                          resize_img_to=224,
-                         normalise = self.normalise,
                          kernel = kernel,
                          device = 'cuda:0'
         )
