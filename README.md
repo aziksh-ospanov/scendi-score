@@ -3,13 +3,13 @@
 <hr>
 <div align="center" style="line-height: 1;">
   <a href="https://aziksh-ospanov.github.io/Scendi/" target="_blank" style="margin: 2px;">
-    <img alt="Homepage" src="/images/logo.svg" style="display: inline-block; vertical-align: middle;"/>
+    <img alt="Homepage" src="images/logo.svg" style="display: inline-block; vertical-align: middle;"/>
   </a>
   <a href="https://huggingface.co/datasets/aziksh/animals_with_objects_sdxl" target="_blank" style="margin: 2px;">
-    <img alt="Hugging Face" src="/images/hf_logo_1" style="display: inline-block; vertical-align: middle;"/>
+    <img alt="Hugging Face" src="images/hf_logo_1.svg" style="display: inline-block; vertical-align: middle;"/>
   </a>
   <a href="https://huggingface.co/datasets/aziksh/animals_with_fruits_dalle3" target="_blank" style="margin: 2px;">
-    <img alt="Hugging Face" src="/images/hf_logo_2" style="display: inline-block; vertical-align: middle;"/>
+    <img alt="Hugging Face" src="images/hf_logo_2.svg" style="display: inline-block; vertical-align: middle;"/>
   </a>
 </div>
 
