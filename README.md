@@ -15,10 +15,10 @@
 
 <p align="center">
   <a href="#1-installation">Installation</a> |
-  <a href="#2-initialize-scendi">Initializing Scendi Score</a> |
-  <a href="#3-compute-scendi">Computing Scendi Score</a> |
-  <a href="#4-cluster-scendi">Clustering with Scendi</a> |
-  <a href="#5-datasets">Datasets used</a> |
+  <a href="#2-initializing-scendi-score">Initializing Scendi Score</a> |
+  <a href="#3-computing-scendi-score">Computing Scendi Score</a> |
+  <a href="#4-clustering-with-scendi">Clustering with Scendi</a> |
+  <a href="#5-datasets-used">Datasets used</a> |
 </p>
 
 
