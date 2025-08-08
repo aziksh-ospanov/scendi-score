@@ -1,4 +1,12 @@
 # Scendi Score for Prompt-Aware Diversity Evaluation
+
+<hr>
+<div align="center" style="line-height: 1;">
+  <a href="https://aziksh-ospanov.github.io/Scendi/" target="_blank" style="margin: 2px;">
+    <img alt="Homepage" src="/image/logo.svg" style="display: inline-block; vertical-align: middle;"/>
+  </a>
+</div>
+
 A GitHub repository accompanying a "Scendi Score: Prompt-Aware Diversity Evaluation via Schur Complement of CLIP Embeddings" paper
 
 ![Scendi Score](images/intro_image.png)
