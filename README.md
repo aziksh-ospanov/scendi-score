@@ -19,6 +19,7 @@
   <a href="#3-computing-scendi-score">Computing Scendi Score</a> |
   <a href="#4-clustering-with-scendi">Clustering with Scendi</a> |
   <a href="#5-datasets-used">Datasets used</a> |
+  <a href="#6-citation">Citation</a> |
 </p>
 
 
@@ -84,6 +85,16 @@ We provide access to datasets as follows:
 - [SDXL generated animals with objects](https://huggingface.co/datasets/aziksh/animals_with_objects_sdxl)
 - [DALL-E 3 generated animals eating fruits](https://huggingface.co/datasets/aziksh/animals_with_fruits_dalle3)
 
+## 6. Citation
+```bib
+@inproceedings{
+      ospanov2025scendi,
+      title = {Scendi Score: Prompt-Aware Diversity Evaluation via Schur Complement of CLIP Embeddings},
+      author = {Azim Ospanov and Mohammad Jalali and Farzan Farnia},
+      booktitle = {International Conference on Computer Vision},
+      year = {2025}
+}
+```
 
 This `README.md` file provides a clear and concise guide for users to understand and run the demo script, including installation instructions, usage examples, and parameter explanations. Adjust the paths and filenames in the script to match your specific environment and dataset.
 
